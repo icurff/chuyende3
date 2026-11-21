@@ -1,0 +1,624 @@
+<!DOCTYPE html><html lang="vi"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Người đặt khám — Chọn bác sĩ &amp; thời gian | Phòng khám An Tâm</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'status-pending': '#92400E',
+        'on-status-pending': '#FFFFFF',
+        'status-pending-container': '#FEF3C7',
+        'on-status-pending-container': '#78350F',
+        'status-confirmed': '#065F46',
+        'on-status-confirmed': '#FFFFFF',
+        'status-confirmed-container': '#D1FAE5',
+        'on-status-confirmed-container': '#064E3B',
+        'status-reschedule': '#3730A3',
+        'on-status-reschedule': '#FFFFFF',
+        'status-reschedule-container': '#E0E7FF',
+        'on-status-reschedule-container': '#312E81',
+        'light-primary': '#00544F',
+        'light-on-primary': '#FFFFFF',
+        'light-primary-container': '#0D6E68',
+        'light-on-primary-container': '#9CEDE5',
+        'light-secondary': '#476461',
+        'light-on-secondary': '#FFFFFF',
+        'light-secondary-container': '#C9E9E5',
+        'light-on-secondary-container': '#183533',
+        'light-tertiary': '#753A21',
+        'light-on-tertiary': '#FFFFFF',
+        'light-tertiary-container': '#925136',
+        'light-on-tertiary-container': '#FFD6C7',
+        'light-error': '#BA1A1A',
+        'light-on-error': '#FFFFFF',
+        'light-error-container': '#FFDAD6',
+        'light-on-error-container': '#93000A',
+        'light-background': '#F7FAF8',
+        'light-on-background': '#181C1C',
+        'light-surface': '#F7FAF8',
+        'light-surface-dim': '#D7DBD9',
+        'light-surface-bright': '#FFFFFF',
+        'light-surface-container-lowest': '#FFFFFF',
+        'light-surface-container-low': '#F1F4F3',
+        'light-surface-container': '#EBEFED',
+        'light-surface-container-high': '#E6E9E7',
+        'light-surface-container-highest': '#E0E3E2',
+        'light-on-surface': '#181C1C',
+        'light-surface-variant': '#DAE5E2',
+        'light-on-surface-variant': '#3E4947',
+        'light-outline': '#6E7977',
+        'light-outline-variant': '#BEC9C7',
+        'light-inverse-surface': '#2D3130',
+        'light-inverse-on-surface': '#EEF1F0',
+        'light-inverse-primary': '#84D5CD',
+        'dark-primary': '#84D5CD',
+        'dark-on-primary': '#003734',
+        'dark-primary-container': '#0D6E68',
+        'dark-on-primary-container': '#9CEDE5',
+        'dark-secondary': '#AECDC9',
+        'dark-on-secondary': '#183533',
+        'dark-secondary-container': '#2F4C49',
+        'dark-on-secondary-container': '#C9E9E5',
+        'dark-tertiary': '#FFB598',
+        'dark-on-tertiary': '#542109',
+        'dark-tertiary-container': '#925136',
+        'dark-on-tertiary-container': '#FFD6C7',
+        'dark-error': '#FFB4AB',
+        'dark-on-error': '#690005',
+        'dark-error-container': '#93000A',
+        'dark-on-error-container': '#FFDAD6',
+        'dark-background': '#101414',
+        'dark-on-background': '#E0E3E2',
+        'dark-surface': '#101414',
+        'dark-surface-dim': '#101414',
+        'dark-surface-bright': '#363A39',
+        'dark-surface-container-lowest': '#0B0F0E',
+        'dark-surface-container-low': '#181C1C',
+        'dark-surface-container': '#1C2020',
+        'dark-surface-container-high': '#272B2A',
+        'dark-surface-container-highest': '#313635',
+        'dark-on-surface': '#E0E3E2',
+        'dark-surface-variant': '#3E4947',
+        'dark-on-surface-variant': '#BEC9C7',
+        'dark-outline': '#889391',
+        'dark-outline-variant': '#3E4947',
+        'dark-inverse-surface': '#E0E3E2',
+        'dark-inverse-on-surface': '#2D3130',
+        'dark-inverse-primary': '#026A64',
+      },
+      borderRadius: {
+        'sm': '4px',
+        'DEFAULT': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '48px',
+        'page-margin': '24px',
+      },
+      fontFamily: {
+        'display': ['"Plus Jakarta Sans"', 'sans-serif'],
+        'headline': ['"Plus Jakarta Sans"', 'sans-serif'],
+        'title': ['"Be Vietnam Pro"', 'sans-serif'],
+        'body': ['"Be Vietnam Pro"', 'sans-serif'],
+        'label': ['"Be Vietnam Pro"', 'sans-serif'],
+        'mono': ['"Source Code Pro"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'display-lg-mobile': ['28px', { lineHeight: '36px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg': ['28px', { lineHeight: '36px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-md': ['22px', { lineHeight: '30px', letterSpacing: '-0.15px', fontWeight: '600' }],
+        'title-lg': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-md': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '600' }],
+        'label-sm': ['11px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '500' }],
+        'mono-md': ['13px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '200ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;family=Source+Code+Pro:wght@500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }</style>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased">
+  <div class="min-h-[1024px] flex flex-col" data-stitch-vh="min-h-[1024px]===min-h-screen">
+
+    <!-- Shared App Shell Header -->
+    <header class="bg-light-surface-container-lowest border-b border-light-outline-variant sticky top-0 z-20">
+      <div class="max-w-[1280px] mx-auto px-gutter-lg py-gutter-md flex flex-wrap items-center justify-between gap-gutter-md">
+        <div class="flex items-center gap-gutter-md">
+          <div class="w-10 h-10 rounded bg-light-primary text-light-on-primary flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[22px]" aria-hidden="true">medical_services</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-gutter-sm">
+              <span class="font-headline text-title-lg text-light-on-surface" data-design-text-token="title-lg">Phòng khám Đa khoa An Tâm</span>
+              <span class="inline-flex items-center px-gutter-sm py-gutter-xs rounded-full bg-light-surface-container text-light-on-surface-variant font-body text-label-sm" data-design-text-token="label-sm">Dữ liệu mẫu</span>
+            </div>
+            <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">Cổng đặt lịch &amp; tiếp nhận khám bệnh</p>
+          </div>
+        </div>
+
+        <nav aria-label="Chuyển vai trò sử dụng" class="flex items-center gap-gutter-xs p-gutter-xs rounded bg-light-surface-container border border-light-outline-variant">
+          <a href="../patient-booking/ChonBacSiVaThoiGian.html" aria-current="page" class="inline-flex items-center gap-gutter-xs px-gutter-md py-gutter-xs rounded-sm bg-light-surface-container-lowest text-light-primary border border-light-outline-variant/60">
+            <span class="material-symbols-outlined text-[18px]" aria-hidden="true">person</span>
+            <span class="font-body text-label-lg" data-design-text-token="label-lg">Người đặt khám</span>
+          </a>
+          <a href="../staff-requests/DanhSachYeuCau.html" class="inline-flex items-center gap-gutter-xs px-gutter-md py-gutter-xs rounded-sm text-light-on-surface-variant hover:text-light-on-surface transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-[18px]" aria-hidden="true">support_agent</span>
+            <span class="font-body text-label-lg" data-design-text-token="label-lg">Nhân viên tiếp nhận</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-[1280px] w-full mx-auto px-gutter-lg py-gutter-xl flex-1">
+      <div class="mb-gutter-xl">
+        <h1 class="font-headline text-headline-lg text-light-on-surface text-balance" data-design-text-token="headline-lg">Đặt yêu cầu khám bệnh</h1>
+        <p class="font-body text-body-lg text-light-on-surface-variant mt-gutter-xs max-w-prose text-pretty" data-design-text-token="body-lg">
+          Chọn bác sĩ và khung giờ mong muốn. Yêu cầu sau khi gửi sẽ ở trạng thái Chờ xác nhận để nhân viên tiếp nhận kiểm tra lịch trống.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-xl items-start">
+
+        <!-- Left Column: Steps 1, 2, 3 -->
+        <div class="lg:col-span-8 flex flex-col gap-gutter-xl">
+
+          <!-- Step 1: Choose Doctor -->
+          <section aria-labelledby="step-doctor-heading" class="flex flex-col gap-gutter-md">
+            <div class="flex flex-wrap items-center justify-between gap-gutter-md">
+              <div>
+                <h2 id="step-doctor-heading" class="font-headline text-headline-md text-light-on-surface" data-design-text-token="headline-md">1. Chọn bác sĩ khám</h2>
+                <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">Lọc theo chuyên khoa hoặc chọn trực tiếp bác sĩ phù hợp</p>
+              </div>
+              <div role="tablist" aria-label="Lọc chuyên khoa" class="inline-flex flex-wrap items-center gap-gutter-xs p-gutter-xs rounded bg-light-surface-container border border-light-outline-variant">
+                <button type="button" role="tab" aria-selected="true" data-specialty="all" class="specialty-tab px-gutter-sm py-gutter-xs rounded-sm bg-light-surface-container-lowest text-light-primary border border-light-outline-variant/60 font-body text-label-md">
+                  <span data-design-text-token="label-md">Tất cả</span>
+                </button>
+                <button type="button" role="tab" aria-selected="false" data-specialty="Nội tổng quát" class="specialty-tab px-gutter-sm py-gutter-xs rounded-sm text-light-on-surface-variant hover:text-light-on-surface font-body text-label-md">
+                  <span data-design-text-token="label-md">Nội tổng quát</span>
+                </button>
+                <button type="button" role="tab" aria-selected="false" data-specialty="Nhi khoa" class="specialty-tab px-gutter-sm py-gutter-xs rounded-sm text-light-on-surface-variant hover:text-light-on-surface font-body text-label-md">
+                  <span data-design-text-token="label-md">Nhi khoa</span>
+                </button>
+                <button type="button" role="tab" aria-selected="false" data-specialty="Tai Mũi Họng" class="specialty-tab px-gutter-sm py-gutter-xs rounded-sm text-light-on-surface-variant hover:text-light-on-surface font-body text-label-md">
+                  <span data-design-text-token="label-md">Tai Mũi Họng</span>
+                </button>
+              </div>
+            </div>
+
+            <div id="doctor-grid" class="grid grid-cols-1 md:grid-cols-2 gap-gutter-md items-stretch">
+              <!-- Doctor 1 (Selected by default) -->
+              <div role="button" tabindex="0" data-component-id="card-interactive-2" data-component-type="card" data-component-variant="interactive" data-doctor-id="doc-1" data-doctor-name="BS. CKII Nguyễn Minh Hiếu" data-doctor-specialty="Nội tổng quát" data-doctor-room="Phòng 204" class="doctor-card h-full bg-light-surface-container-lowest border-2 border-light-primary rounded-md p-gutter-lg flex flex-col justify-between gap-gutter-md cursor-pointer transition-colors duration-state-change">
+                <div class="flex flex-col gap-gutter-md">
+                  <header class="flex items-center gap-gutter-md">
+                    <div class="w-12 h-12 rounded-full bg-light-secondary-container text-light-on-secondary-container flex items-center justify-center shrink-0">
+                      <span class="font-headline text-title-md" data-design-text-token="title-md">MH</span>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                      <h3 class="font-headline text-title-lg text-light-on-surface" data-design-text-token="title-lg">BS. CKII Nguyễn Minh Hiếu</h3>
+                      <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">Nội tổng quát · Phòng 204</p>
+                    </div>
+                  </header>
+                  <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">
+                    12 năm kinh nghiệm khám tổng quát, tầm soát huyết áp và bệnh lý nội khoa.
+                  </p>
+                </div>
+                <footer class="pt-gutter-sm border-t border-light-outline-variant/60 flex items-center justify-between gap-gutter-sm">
+                  <span class="font-body text-label-md text-light-on-surface-variant tabular-nums" data-design-text-token="label-md">Còn 6 khung giờ trống</span>
+                  <span class="doctor-selected-label inline-flex items-center gap-gutter-xs font-body text-label-md text-light-primary" data-design-text-token="label-md">
+                    <span class="material-symbols-outlined text-[16px]" aria-hidden="true">check_circle</span>
+                    Đang chọn
+                  </span>
+                </footer>
+              </div>
+
+              <!-- Doctor 2 -->
+              <div role="button" tabindex="0" data-component-id="card-interactive-2" data-component-type="card" data-component-variant="interactive" data-doctor-id="doc-2" data-doctor-name="ThS. BS. Trần Thảo Linh" data-doctor-specialty="Nhi khoa" data-doctor-room="Phòng 108" class="doctor-card h-full bg-light-surface-container-lowest border border-light-outline-variant hover:border-light-primary/60 rounded-md p-gutter-lg flex flex-col justify-between gap-gutter-md cursor-pointer transition-colors duration-state-change">
+                <div class="flex flex-col gap-gutter-md">
+                  <header class="flex items-center gap-gutter-md">
+                    <div class="w-12 h-12 rounded-full bg-light-surface-container text-light-on-surface-variant flex items-center justify-center shrink-0">
+                      <span class="font-headline text-title-md" data-design-text-token="title-md">TL</span>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                      <h3 class="font-headline text-title-lg text-light-on-surface" data-design-text-token="title-lg">ThS. BS. Trần Thảo Linh</h3>
+                      <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">Nhi khoa · Phòng 108</p>
+                    </div>
+                  </header>
+                  <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">
+                    Chuyên khám hô hấp trẻ em, tư vấn dinh dưỡng và theo dõi phát triển.
+                  </p>
+                </div>
+                <footer class="pt-gutter-sm border-t border-light-outline-variant/60 flex items-center justify-between gap-gutter-sm">
+                  <span class="font-body text-label-md text-light-on-surface-variant tabular-nums" data-design-text-token="label-md">Còn 5 khung giờ trống</span>
+                  <span class="doctor-selected-label hidden items-center gap-gutter-xs font-body text-label-md text-light-primary" data-design-text-token="label-md">
+                    <span class="material-symbols-outlined text-[16px]" aria-hidden="true">check_circle</span>
+                    Đang chọn
+                  </span>
+                </footer>
+              </div>
+
+              <!-- Doctor 3 -->
+              <div role="button" tabindex="0" data-component-id="card-interactive-2" data-component-type="card" data-component-variant="interactive" data-doctor-id="doc-3" data-doctor-name="BS. CKI Phạm Quốc Bảo" data-doctor-specialty="Tai Mũi Họng" data-doctor-room="Phòng 302" class="doctor-card h-full bg-light-surface-container-lowest border border-light-outline-variant hover:border-light-primary/60 rounded-md p-gutter-lg flex flex-col justify-between gap-gutter-md cursor-pointer transition-colors duration-state-change">
+                <div class="flex flex-col gap-gutter-md">
+                  <header class="flex items-center gap-gutter-md">
+                    <div class="w-12 h-12 rounded-full bg-light-surface-container text-light-on-surface-variant flex items-center justify-center shrink-0">
+                      <span class="font-headline text-title-md" data-design-text-token="title-md">QB</span>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                      <h3 class="font-headline text-title-lg text-light-on-surface" data-design-text-token="title-lg">BS. CKI Phạm Quốc Bảo</h3>
+                      <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">Tai Mũi Họng · Phòng 302</p>
+                    </div>
+                  </header>
+                  <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">
+                    Khám nội soi tai mũi họng, điều trị viêm xoang và dị ứng hô hấp trên.
+                  </p>
+                </div>
+                <footer class="pt-gutter-sm border-t border-light-outline-variant/60 flex items-center justify-between gap-gutter-sm">
+                  <span class="font-body text-label-md text-light-on-surface-variant tabular-nums" data-design-text-token="label-md">Còn 4 khung giờ trống</span>
+                  <span class="doctor-selected-label hidden items-center gap-gutter-xs font-body text-label-md text-light-primary" data-design-text-token="label-md">
+                    <span class="material-symbols-outlined text-[16px]" aria-hidden="true">check_circle</span>
+                    Đang chọn
+                  </span>
+                </footer>
+              </div>
+
+              <!-- Doctor 4 -->
+              <div role="button" tabindex="0" data-component-id="card-interactive-2" data-component-type="card" data-component-variant="interactive" data-doctor-id="doc-4" data-doctor-name="ThS. BS. Lê Thu Hà" data-doctor-specialty="Nội tổng quát" data-doctor-room="Phòng 209" class="doctor-card h-full bg-light-surface-container-lowest border border-light-outline-variant hover:border-light-primary/60 rounded-md p-gutter-lg flex flex-col justify-between gap-gutter-md cursor-pointer transition-colors duration-state-change">
+                <div class="flex flex-col gap-gutter-md">
+                  <header class="flex items-center gap-gutter-md">
+                    <div class="w-12 h-12 rounded-full bg-light-surface-container text-light-on-surface-variant flex items-center justify-center shrink-0">
+                      <span class="font-headline text-title-md" data-design-text-token="title-md">TH</span>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                      <h3 class="font-headline text-title-lg text-light-on-surface" data-design-text-token="title-lg">ThS. BS. Lê Thu Hà</h3>
+                      <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">Nội tổng quát · Phòng 209</p>
+                    </div>
+                  </header>
+                  <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">
+                    Tư vấn sức khỏe định kỳ, rối loạn chuyển hóa và dinh dưỡng người lớn.
+                  </p>
+                </div>
+                <footer class="pt-gutter-sm border-t border-light-outline-variant/60 flex items-center justify-between gap-gutter-sm">
+                  <span class="font-body text-label-md text-light-on-surface-variant tabular-nums" data-design-text-token="label-md">Còn 7 khung giờ trống</span>
+                  <span class="doctor-selected-label hidden items-center gap-gutter-xs font-body text-label-md text-light-primary" data-design-text-token="label-md">
+                    <span class="material-symbols-outlined text-[16px]" aria-hidden="true">check_circle</span>
+                    Đang chọn
+                  </span>
+                </footer>
+              </div>
+            </div>
+          </section>
+
+          <!-- Step 2: Choose Date & Time -->
+          <section aria-labelledby="step-time-heading" class="bg-light-surface-container-lowest border border-light-outline-variant rounded-md p-gutter-lg flex flex-col gap-gutter-lg">
+            <div>
+              <h2 id="step-time-heading" class="font-headline text-headline-md text-light-on-surface" data-design-text-token="headline-md">2. Chọn ngày và khung giờ mong muốn</h2>
+              <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">Mỗi khung giờ kéo dài 30 phút. Khung giờ gạch ngang đã kín lịch dự kiến.</p>
+            </div>
+
+            <!-- Date Picker Pills -->
+            <div class="flex flex-col gap-gutter-sm">
+              <span class="font-body text-label-md text-light-on-surface-variant" data-design-text-token="label-md">Ngày khám</span>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-gutter-sm">
+                <button type="button" data-date="Thứ 7, 21/11/2026" class="date-btn px-gutter-md py-gutter-sm rounded border-2 border-light-primary bg-light-secondary-container/40 text-light-primary text-left transition-colors duration-state-change">
+                  <span class="block font-body text-label-md" data-design-text-token="label-md">Thứ 7</span>
+                  <span class="block font-mono text-mono-md tabular-nums" data-design-text-token="mono-md">21/11/2026</span>
+                </button>
+                <button type="button" data-date="Chủ nhật, 22/11/2026" class="date-btn px-gutter-md py-gutter-sm rounded border border-light-outline-variant bg-light-surface-container-lowest text-light-on-surface hover:border-light-primary/60 text-left transition-colors duration-state-change">
+                  <span class="block font-body text-label-md" data-design-text-token="label-md">Chủ nhật</span>
+                  <span class="block font-mono text-mono-md tabular-nums" data-design-text-token="mono-md">22/11/2026</span>
+                </button>
+                <button type="button" data-date="Thứ 2, 23/11/2026" class="date-btn px-gutter-md py-gutter-sm rounded border border-light-outline-variant bg-light-surface-container-lowest text-light-on-surface hover:border-light-primary/60 text-left transition-colors duration-state-change">
+                  <span class="block font-body text-label-md" data-design-text-token="label-md">Thứ 2</span>
+                  <span class="block font-mono text-mono-md tabular-nums" data-design-text-token="mono-md">23/11/2026</span>
+                </button>
+                <button type="button" data-date="Thứ 3, 24/11/2026" class="date-btn px-gutter-md py-gutter-sm rounded border border-light-outline-variant bg-light-surface-container-lowest text-light-on-surface hover:border-light-primary/60 text-left transition-colors duration-state-change">
+                  <span class="block font-body text-label-md" data-design-text-token="label-md">Thứ 3</span>
+                  <span class="block font-mono text-mono-md tabular-nums" data-design-text-token="mono-md">24/11/2026</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Time Slots -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg">
+              <div class="flex flex-col gap-gutter-sm">
+                <span class="font-body text-label-md text-light-on-surface-variant" data-design-text-token="label-md">Buổi sáng</span>
+                <div class="grid grid-cols-3 gap-gutter-sm">
+                  <button type="button" disabled class="px-gutter-sm py-gutter-sm rounded border border-light-outline-variant/50 bg-light-surface-container text-light-on-surface-variant cursor-not-allowed line-through font-mono text-mono-md tabular-nums">08:00</button>
+                  <button type="button" data-time="08:30" class="time-btn px-gutter-sm py-gutter-sm rounded border border-light-outline-variant bg-light-surface-container-lowest text-light-on-surface hover:border-light-primary font-mono text-mono-md tabular-nums transition-colors duration-state-change">08:30</button>
+                  <button type="button" data-time="09:00" class="time-btn px-gutter-sm py-gutter-sm rounded border-2 border-light-primary bg-light-primary text-light-on-primary font-mono text-mono-md tabular-nums transition-colors duration-state-change">09:00</button>
+                  <button type="button" data-time="09:30" class="time-btn px-gutter-sm py-gutter-sm rounded border border-light-outline-variant bg-light-surface-container-lowest text-light-on-surface hover:border-light-primary font-mono text-mono-md tabular-nums transition-colors duration-state-change">09:30</button>
+                  <button type="button" disabled class="px-gutter-sm py-gutter-sm rounded border border-light-outline-variant/50 bg-light-surface-container text-light-on-surface-variant cursor-not-allowed line-through font-mono text-mono-md tabular-nums">10:00</button>
+                  <button type="button" data-time="10:30" class="time-btn px-gutter-sm py-gutter-sm rounded border border-light-outline-variant bg-light-surface-container-lowest text-light-on-surface hover:border-light-primary font-mono text-mono-md tabular-nums transition-colors duration-state-change">10:30</button>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-gutter-sm">
+                <span class="font-body text-label-md text-light-on-surface-variant" data-design-text-token="label-md">Buổi chiều</span>
+                <div class="grid grid-cols-3 gap-gutter-sm">
+                  <button type="button" data-time="13:30" class="time-btn px-gutter-sm py-gutter-sm rounded border border-light-outline-variant bg-light-surface-container-lowest text-light-on-surface hover:border-light-primary font-mono text-mono-md tabular-nums transition-colors duration-state-change">13:30</button>
+                  <button type="button" data-time="14:00" class="time-btn px-gutter-sm py-gutter-sm rounded border border-light-outline-variant bg-light-surface-container-lowest text-light-on-surface hover:border-light-primary font-mono text-mono-md tabular-nums transition-colors duration-state-change">14:00</button>
+                  <button type="button" disabled class="px-gutter-sm py-gutter-sm rounded border border-light-outline-variant/50 bg-light-surface-container text-light-on-surface-variant cursor-not-allowed line-through font-mono text-mono-md tabular-nums">14:30</button>
+                  <button type="button" data-time="15:00" class="time-btn px-gutter-sm py-gutter-sm rounded border border-light-outline-variant bg-light-surface-container-lowest text-light-on-surface hover:border-light-primary font-mono text-mono-md tabular-nums transition-colors duration-state-change">15:00</button>
+                  <button type="button" data-time="15:30" class="time-btn px-gutter-sm py-gutter-sm rounded border border-light-outline-variant bg-light-surface-container-lowest text-light-on-surface hover:border-light-primary font-mono text-mono-md tabular-nums transition-colors duration-state-change">15:30</button>
+                  <button type="button" data-time="16:00" class="time-btn px-gutter-sm py-gutter-sm rounded border border-light-outline-variant bg-light-surface-container-lowest text-light-on-surface hover:border-light-primary font-mono text-mono-md tabular-nums transition-colors duration-state-change">16:00</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Step 3: Booker & Patient Info -->
+          <section aria-labelledby="step-info-heading" class="bg-light-surface-container-lowest border border-light-outline-variant rounded-md p-gutter-lg flex flex-col gap-gutter-lg">
+            <div class="flex flex-wrap items-start justify-between gap-gutter-md">
+              <div>
+                <h2 id="step-info-heading" class="font-headline text-headline-md text-light-on-surface" data-design-text-token="headline-md">3. Thông tin người đặt &amp; người được khám</h2>
+                <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">Phân biệt rõ người liên hệ nhận thông báo và người trực tiếp đến khám tại phòng khám.</p>
+              </div>
+              <div class="inline-flex items-center gap-gutter-xs p-gutter-xs rounded bg-light-surface-container border border-light-outline-variant">
+                <button type="button" id="mode-relative" class="px-gutter-sm py-gutter-xs rounded-sm bg-light-surface-container-lowest text-light-primary border border-light-outline-variant/60 font-body text-label-md">
+                  <span data-design-text-token="label-md">Đặt cho người thân</span>
+                </button>
+                <button type="button" id="mode-self" class="px-gutter-sm py-gutter-xs rounded-sm text-light-on-surface-variant hover:text-light-on-surface font-body text-label-md">
+                  <span data-design-text-token="label-md">Đặt cho chính tôi</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Group A: Người đặt / Người liên hệ -->
+            <div class="flex flex-col gap-gutter-sm">
+              <span class="font-body text-label-md text-light-primary" data-design-text-token="label-md">Người đặt / Người liên hệ (nhận thông báo xác nhận)</span>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-md">
+                <div class="flex flex-col gap-gutter-xs">
+                  <label for="booker-name" class="font-body text-label-md text-light-on-surface" data-design-text-token="label-md">Họ và tên người đặt</label>
+                  <input id="booker-name" type="text" value="Nguyễn Văn An" class="rounded border border-light-outline-variant bg-light-surface-container-lowest px-gutter-md py-gutter-sm font-body text-body-md text-light-on-surface focus:border-light-primary focus:ring-1 focus:ring-light-primary">
+                </div>
+                <div class="flex flex-col gap-gutter-xs">
+                  <label for="booker-phone" class="font-body text-label-md text-light-on-surface" data-design-text-token="label-md">Số điện thoại liên hệ</label>
+                  <input id="booker-phone" type="tel" value="0912 345 678" class="rounded border border-light-outline-variant bg-light-surface-container-lowest px-gutter-md py-gutter-sm font-mono text-mono-md tabular-nums text-light-on-surface focus:border-light-primary focus:ring-1 focus:ring-light-primary">
+                </div>
+              </div>
+            </div>
+
+            <!-- Group B: Người được khám -->
+            <div class="pt-gutter-md border-t border-light-outline-variant/60 flex flex-col gap-gutter-sm">
+              <span class="font-body text-label-md text-light-primary" data-design-text-token="label-md">Người được khám (trực tiếp đến phòng khám)</span>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-md">
+                <div class="md:col-span-2 flex flex-col gap-gutter-xs">
+                  <label for="patient-name" class="font-body text-label-md text-light-on-surface" data-design-text-token="label-md">Họ và tên người được khám</label>
+                  <input id="patient-name" type="text" value="Trần Thị Hoa" class="rounded border border-light-outline-variant bg-light-surface-container-lowest px-gutter-md py-gutter-sm font-body text-body-md text-light-on-surface focus:border-light-primary focus:ring-1 focus:ring-light-primary">
+                </div>
+                <div class="flex flex-col gap-gutter-xs">
+                  <label for="patient-meta" class="font-body text-label-md text-light-on-surface" data-design-text-token="label-md">Tuổi / Quan hệ</label>
+                  <input id="patient-meta" type="text" value="64 tuổi · Mẹ" class="rounded border border-light-outline-variant bg-light-surface-container-lowest px-gutter-md py-gutter-sm font-body text-body-md text-light-on-surface focus:border-light-primary focus:ring-1 focus:ring-light-primary">
+                </div>
+                <div class="md:col-span-3 flex flex-col gap-gutter-xs">
+                  <label for="patient-note" class="font-body text-label-md text-light-on-surface" data-design-text-token="label-md">Lý do khám (không bắt buộc)</label>
+                  <input id="patient-note" type="text" value="Khám tổng quát định kỳ, kiểm tra huyết áp" class="rounded border border-light-outline-variant bg-light-surface-container-lowest px-gutter-md py-gutter-sm font-body text-body-md text-light-on-surface focus:border-light-primary focus:ring-1 focus:ring-light-primary">
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Right Column: Sticky Request Summary -->
+        <aside class="lg:col-span-4 lg:sticky lg:top-24">
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="outlined" class="bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-gutter-lg flex flex-col gap-gutter-lg">
+            <header class="flex items-start justify-between gap-gutter-sm pb-gutter-md border-b border-light-outline-variant/60">
+              <div>
+                <h2 class="font-headline text-title-lg text-light-on-surface" data-design-text-token="title-lg">Tóm tắt yêu cầu</h2>
+                <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">Kiểm tra thông tin trước khi gửi</p>
+              </div>
+              <!-- COMPONENT: badge-status-pending -->
+              <span data-component-id="badge-status-pending" data-component-type="badge" data-component-variant="warning" role="status" class="inline-flex items-center gap-gutter-xs px-gutter-sm py-gutter-xs rounded-full bg-status-pending-container text-on-status-pending-container border border-status-pending/20 shrink-0">
+                <span class="material-symbols-outlined text-[16px]" aria-hidden="true">schedule</span>
+                <span class="font-body text-label-md" data-design-text-token="label-md">Chờ xác nhận</span>
+              </span>
+            </header>
+
+            <dl class="flex flex-col gap-gutter-md">
+              <div class="flex flex-col gap-gutter-xs">
+                <dt class="font-body text-label-md text-light-on-surface-variant" data-design-text-token="label-md">Bác sĩ phụ trách</dt>
+                <dd id="summary-doctor" class="font-body text-title-md text-light-on-surface" data-design-text-token="title-md">BS. CKII Nguyễn Minh Hiếu</dd>
+                <dd id="summary-specialty" class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">Nội tổng quát · Phòng 204</dd>
+              </div>
+              <div class="flex flex-col gap-gutter-xs">
+                <dt class="font-body text-label-md text-light-on-surface-variant" data-design-text-token="label-md">Thời gian mong muốn</dt>
+                <dd id="summary-datetime" class="font-mono text-mono-md text-light-on-surface tabular-nums" data-design-text-token="mono-md">09:00 · Thứ 7, 21/11/2026</dd>
+              </div>
+              <div class="flex flex-col gap-gutter-xs">
+                <dt class="font-body text-label-md text-light-on-surface-variant" data-design-text-token="label-md">Người đặt / Người liên hệ</dt>
+                <dd id="summary-booker" class="font-body text-body-md text-light-on-surface" data-design-text-token="body-md">Nguyễn Văn An · 0912 345 678</dd>
+              </div>
+              <div class="flex flex-col gap-gutter-xs">
+                <dt class="font-body text-label-md text-light-on-surface-variant" data-design-text-token="label-md">Người được khám</dt>
+                <dd id="summary-patient" class="font-body text-body-md text-light-on-surface" data-design-text-token="body-md">Trần Thị Hoa (64 tuổi · Mẹ)</dd>
+              </div>
+            </dl>
+
+            <!-- Simulation Rule Notice -->
+            <div class="rounded bg-status-pending-container/50 border border-status-pending/20 p-gutter-md flex items-start gap-gutter-sm">
+              <span class="material-symbols-outlined text-[20px] text-on-status-pending-container shrink-0 mt-0.5" aria-hidden="true">info</span>
+              <p class="font-body text-body-md text-on-status-pending-container text-pretty" data-design-text-token="body-md">
+                Gửi yêu cầu chưa đồng nghĩa lịch đã được xác nhận. Yêu cầu mới có trạng thái <strong>Chờ xác nhận</strong> từ nhân viên tiếp nhận.
+              </p>
+            </div>
+
+            <!-- Primary Action (Prototype link to Result Screen) -->
+            <!-- COMPONENT: button-primary -->
+            <a id="submit-request-btn" href="../patient-status/KetQuaGuiYeuCau.html" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="w-full inline-flex items-center justify-center gap-gutter-sm px-gutter-lg py-gutter-sm min-h-[44px] rounded bg-light-primary text-light-on-primary hover:bg-light-primary-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light-primary transition-colors duration-state-change ease-state-change">
+              <span class="font-body text-label-lg" data-design-text-token="label-lg">Gửi yêu cầu đặt lịch</span>
+            </a>
+          </article>
+        </aside>
+
+      </div>
+    </main>
+
+    <!-- Shared Footer -->
+    <footer class="border-t border-light-outline-variant bg-light-surface-container-lowest">
+      <div class="max-w-[1280px] mx-auto px-gutter-lg py-gutter-md flex flex-wrap items-center justify-between gap-gutter-md">
+        <p class="font-body text-label-sm text-light-on-surface-variant" data-design-text-token="label-sm">
+          Phòng khám Đa khoa An Tâm · Dữ liệu mẫu phục vụ minh họa quy trình đặt &amp; tiếp nhận lịch hẹn (Agile/Scrum Demo)
+        </p>
+        <span class="font-mono text-label-sm text-light-outline tabular-nums" data-design-text-token="label-sm">Phiên bản Demo v1.0</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    (function () {
+      let selectedDoctor = { name: 'BS. CKII Nguyễn Minh Hiếu', specialty: 'Nội tổng quát · Phòng 204' };
+      let selectedDate = 'Thứ 7, 21/11/2026';
+      let selectedTime = '09:00';
+
+      const summaryDoctor = document.getElementById('summary-doctor');
+      const summarySpecialty = document.getElementById('summary-specialty');
+      const summaryDatetime = document.getElementById('summary-datetime');
+      const summaryBooker = document.getElementById('summary-booker');
+      const summaryPatient = document.getElementById('summary-patient');
+
+      const bookerNameInput = document.getElementById('booker-name');
+      const bookerPhoneInput = document.getElementById('booker-phone');
+      const patientNameInput = document.getElementById('patient-name');
+      const patientMetaInput = document.getElementById('patient-meta');
+      const modeRelativeBtn = document.getElementById('mode-relative');
+      const modeSelfBtn = document.getElementById('mode-self');
+
+      function updateSummary() {
+        summaryDoctor.textContent = selectedDoctor.name;
+        summarySpecialty.textContent = selectedDoctor.specialty;
+        summaryDatetime.textContent = `${selectedTime} · ${selectedDate}`;
+        const bName = bookerNameInput.value.trim() || 'Chưa nhập tên';
+        const bPhone = bookerPhoneInput.value.trim() || 'Chưa nhập SĐT';
+        summaryBooker.textContent = `${bName} · ${bPhone}`;
+        const pName = patientNameInput.value.trim() || 'Chưa nhập tên';
+        const pMeta = patientMetaInput.value.trim();
+        summaryPatient.textContent = pMeta ? `${pName} (${pMeta})` : pName;
+      }
+
+      modeRelativeBtn.addEventListener('click', () => {
+        modeRelativeBtn.className = 'px-gutter-sm py-gutter-xs rounded-sm bg-light-surface-container-lowest text-light-primary border border-light-outline-variant/60 font-body text-label-md';
+        modeSelfBtn.className = 'px-gutter-sm py-gutter-xs rounded-sm text-light-on-surface-variant hover:text-light-on-surface font-body text-label-md';
+        patientNameInput.value = 'Trần Thị Hoa';
+        patientMetaInput.value = '64 tuổi · Mẹ';
+        updateSummary();
+      });
+
+      modeSelfBtn.addEventListener('click', () => {
+        modeSelfBtn.className = 'px-gutter-sm py-gutter-xs rounded-sm bg-light-surface-container-lowest text-light-primary border border-light-outline-variant/60 font-body text-label-md';
+        modeRelativeBtn.className = 'px-gutter-sm py-gutter-xs rounded-sm text-light-on-surface-variant hover:text-light-on-surface font-body text-label-md';
+        patientNameInput.value = bookerNameInput.value;
+        patientMetaInput.value = 'Chính bản thân';
+        updateSummary();
+      });
+
+      document.querySelectorAll('.specialty-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.specialty-tab').forEach(t => {
+            t.setAttribute('aria-selected', 'false');
+            t.className = 'specialty-tab px-gutter-sm py-gutter-xs rounded-sm text-light-on-surface-variant hover:text-light-on-surface font-body text-label-md';
+          });
+          tab.setAttribute('aria-selected', 'true');
+          tab.className = 'specialty-tab px-gutter-sm py-gutter-xs rounded-sm bg-light-surface-container-lowest text-light-primary border border-light-outline-variant/60 font-body text-label-md';
+
+          const spec = tab.dataset.specialty;
+          document.querySelectorAll('.doctor-card').forEach(card => {
+            if (spec === 'all' || card.dataset.doctorSpecialty === spec) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      document.querySelectorAll('.doctor-card').forEach(card => {
+        card.addEventListener('click', () => {
+          document.querySelectorAll('.doctor-card').forEach(c => {
+            c.classList.remove('border-2', 'border-light-primary');
+            c.classList.add('border', 'border-light-outline-variant');
+            c.querySelector('.doctor-selected-label').classList.add('hidden');
+            c.querySelector('.doctor-selected-label').classList.remove('inline-flex');
+          });
+          card.classList.remove('border', 'border-light-outline-variant');
+          card.classList.add('border-2', 'border-light-primary');
+          card.querySelector('.doctor-selected-label').classList.remove('hidden');
+          card.querySelector('.doctor-selected-label').classList.add('inline-flex');
+
+          selectedDoctor = {
+            name: card.dataset.doctorName,
+            specialty: `${card.dataset.doctorSpecialty} · ${card.dataset.doctorRoom}`
+          };
+          updateSummary();
+        });
+      });
+
+      document.querySelectorAll('.date-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.date-btn').forEach(b => {
+            b.className = 'date-btn px-gutter-md py-gutter-sm rounded border border-light-outline-variant bg-light-surface-container-lowest text-light-on-surface hover:border-light-primary/60 text-left transition-colors duration-state-change';
+          });
+          btn.className = 'date-btn px-gutter-md py-gutter-sm rounded border-2 border-light-primary bg-light-secondary-container/40 text-light-primary text-left transition-colors duration-state-change';
+          selectedDate = btn.dataset.date;
+          updateSummary();
+        });
+      });
+
+      document.querySelectorAll('.time-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.time-btn').forEach(b => {
+            b.className = 'time-btn px-gutter-sm py-gutter-sm rounded border border-light-outline-variant bg-light-surface-container-lowest text-light-on-surface hover:border-light-primary font-mono text-mono-md tabular-nums transition-colors duration-state-change';
+          });
+          btn.className = 'time-btn px-gutter-sm py-gutter-sm rounded border-2 border-light-primary bg-light-primary text-light-on-primary font-mono text-mono-md tabular-nums transition-colors duration-state-change';
+          selectedTime = btn.dataset.time;
+          updateSummary();
+        });
+      });
+
+      [bookerNameInput, bookerPhoneInput, patientNameInput, patientMetaInput].forEach(el => {
+        el.addEventListener('input', updateSummary);
+      });
+    })();
+  </script>
+
+
+</body></html>

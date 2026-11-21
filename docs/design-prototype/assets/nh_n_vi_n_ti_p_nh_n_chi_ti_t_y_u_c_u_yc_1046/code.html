@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="vi"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nhân viên tiếp nhận — Chi tiết yêu cầu YC-1046 | Phòng khám An Tâm</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'status-pending': '#92400E',
+        'on-status-pending': '#FFFFFF',
+        'status-pending-container': '#FEF3C7',
+        'on-status-pending-container': '#78350F',
+        'status-confirmed': '#065F46',
+        'on-status-confirmed': '#FFFFFF',
+        'status-confirmed-container': '#D1FAE5',
+        'on-status-confirmed-container': '#064E3B',
+        'status-reschedule': '#3730A3',
+        'on-status-reschedule': '#FFFFFF',
+        'status-reschedule-container': '#E0E7FF',
+        'on-status-reschedule-container': '#312E81',
+        'light-primary': '#00544F',
+        'light-on-primary': '#FFFFFF',
+        'light-primary-container': '#0D6E68',
+        'light-on-primary-container': '#9CEDE5',
+        'light-secondary': '#476461',
+        'light-on-secondary': '#FFFFFF',
+        'light-secondary-container': '#C9E9E5',
+        'light-on-secondary-container': '#183533',
+        'light-tertiary': '#753A21',
+        'light-on-tertiary': '#FFFFFF',
+        'light-tertiary-container': '#925136',
+        'light-on-tertiary-container': '#FFD6C7',
+        'light-error': '#BA1A1A',
+        'light-on-error': '#FFFFFF',
+        'light-error-container': '#FFDAD6',
+        'light-on-error-container': '#93000A',
+        'light-background': '#F7FAF8',
+        'light-on-background': '#181C1C',
+        'light-surface': '#F7FAF8',
+        'light-surface-dim': '#D7DBD9',
+        'light-surface-bright': '#FFFFFF',
+        'light-surface-container-lowest': '#FFFFFF',
+        'light-surface-container-low': '#F1F4F3',
+        'light-surface-container': '#EBEFED',
+        'light-surface-container-high': '#E6E9E7',
+        'light-surface-container-highest': '#E0E3E2',
+        'light-on-surface': '#181C1C',
+        'light-surface-variant': '#DAE5E2',
+        'light-on-surface-variant': '#3E4947',
+        'light-outline': '#6E7977',
+        'light-outline-variant': '#BEC9C7',
+        'light-inverse-surface': '#2D3130',
+        'light-inverse-on-surface': '#EEF1F0',
+        'light-inverse-primary': '#84D5CD',
+        'dark-primary': '#84D5CD',
+        'dark-on-primary': '#003734',
+        'dark-primary-container': '#0D6E68',
+        'dark-on-primary-container': '#9CEDE5',
+        'dark-secondary': '#AECDC9',
+        'dark-on-secondary': '#183533',
+        'dark-secondary-container': '#2F4C49',
+        'dark-on-secondary-container': '#C9E9E5',
+        'dark-tertiary': '#FFB598',
+        'dark-on-tertiary': '#542109',
+        'dark-tertiary-container': '#925136',
+        'dark-on-tertiary-container': '#FFD6C7',
+        'dark-error': '#FFB4AB',
+        'dark-on-error': '#690005',
+        'dark-error-container': '#93000A',
+        'dark-on-error-container': '#FFDAD6',
+        'dark-background': '#101414',
+        'dark-on-background': '#E0E3E2',
+        'dark-surface': '#101414',
+        'dark-surface-dim': '#101414',
+        'dark-surface-bright': '#363A39',
+        'dark-surface-container-lowest': '#0B0F0E',
+        'dark-surface-container-low': '#181C1C',
+        'dark-surface-container': '#1C2020',
+        'dark-surface-container-high': '#272B2A',
+        'dark-surface-container-highest': '#313635',
+        'dark-on-surface': '#E0E3E2',
+        'dark-surface-variant': '#3E4947',
+        'dark-on-surface-variant': '#BEC9C7',
+        'dark-outline': '#889391',
+        'dark-outline-variant': '#3E4947',
+        'dark-inverse-surface': '#E0E3E2',
+        'dark-inverse-on-surface': '#2D3130',
+        'dark-inverse-primary': '#026A64',
+      },
+      borderRadius: {
+        'sm': '4px',
+        'DEFAULT': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '48px',
+        'page-margin': '24px',
+      },
+      fontFamily: {
+        'display': ['"Plus Jakarta Sans"', 'sans-serif'],
+        'headline': ['"Plus Jakarta Sans"', 'sans-serif'],
+        'title': ['"Be Vietnam Pro"', 'sans-serif'],
+        'body': ['"Be Vietnam Pro"', 'sans-serif'],
+        'label': ['"Be Vietnam Pro"', 'sans-serif'],
+        'mono': ['"Source Code Pro"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'display-lg-mobile': ['28px', { lineHeight: '36px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg': ['28px', { lineHeight: '36px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-md': ['22px', { lineHeight: '30px', letterSpacing: '-0.15px', fontWeight: '600' }],
+        'title-lg': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-md': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '600' }],
+        'label-sm': ['11px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '500' }],
+        'mono-md': ['13px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '200ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;family=Source+Code+Pro:wght@500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }</style>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased">
+  <div class="min-h-[1024px] flex flex-col" data-stitch-vh="min-h-[1024px]===min-h-screen">
+
+    <!-- Shared App Shell Header -->
+    <header class="bg-light-surface-container-lowest border-b border-light-outline-variant sticky top-0 z-20">
+      <div class="max-w-[1280px] mx-auto px-gutter-lg py-gutter-md flex flex-wrap items-center justify-between gap-gutter-md">
+        <div class="flex items-center gap-gutter-md">
+          <div class="w-10 h-10 rounded bg-light-primary text-light-on-primary flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[22px]" aria-hidden="true">medical_services</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-gutter-sm">
+              <span class="font-headline text-title-lg text-light-on-surface" data-design-text-token="title-lg">Phòng khám Đa khoa An Tâm</span>
+              <span class="inline-flex items-center px-gutter-sm py-gutter-xs rounded-full bg-light-surface-container text-light-on-surface-variant font-body text-label-sm" data-design-text-token="label-sm">Dữ liệu mẫu</span>
+            </div>
+            <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">Cổng đặt lịch &amp; tiếp nhận khám bệnh</p>
+          </div>
+        </div>
+
+        <nav aria-label="Chuyển vai trò sử dụng" class="flex items-center gap-gutter-xs p-gutter-xs rounded bg-light-surface-container border border-light-outline-variant">
+          <a href="../patient-booking/ChonBacSiVaThoiGian.html" class="inline-flex items-center gap-gutter-xs px-gutter-md py-gutter-xs rounded-sm text-light-on-surface-variant hover:text-light-on-surface transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-[18px]" aria-hidden="true">person</span>
+            <span class="font-body text-label-lg" data-design-text-token="label-lg">Người đặt khám</span>
+          </a>
+          <a href="../staff-requests/DanhSachYeuCau.html" aria-current="page" class="inline-flex items-center gap-gutter-xs px-gutter-md py-gutter-xs rounded-sm bg-light-surface-container-lowest text-light-primary border border-light-outline-variant/60">
+            <span class="material-symbols-outlined text-[18px]" aria-hidden="true">support_agent</span>
+            <span class="font-body text-label-lg" data-design-text-token="label-lg">Nhân viên tiếp nhận</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-[1280px] w-full mx-auto px-gutter-lg py-gutter-xl flex-1 flex flex-col gap-gutter-lg">
+
+      <!-- Contextual Back Link -->
+      <div>
+        <a href="../staff-requests/DanhSachYeuCau.html" class="inline-flex items-center gap-gutter-xs font-body text-label-lg text-light-primary hover:underline">
+          <span class="material-symbols-outlined text-[18px]" aria-hidden="true">arrow_back</span>
+          <span data-design-text-token="label-lg">Quay lại danh sách yêu cầu</span>
+        </a>
+      </div>
+
+      <!-- Header Row -->
+      <div class="flex flex-wrap items-center justify-between gap-gutter-md">
+        <div>
+          <span class="font-mono text-mono-md text-light-on-surface-variant tabular-nums" data-design-text-token="mono-md">YC-1046 · Gửi lúc 19:45, 20/11/2026</span>
+          <h1 class="font-headline text-headline-lg text-light-on-surface mt-gutter-xs" data-design-text-token="headline-lg">Chi tiết yêu cầu đặt lịch</h1>
+        </div>
+        <!-- COMPONENT: badge-status-pending -->
+        <span data-component-id="badge-status-pending" data-component-type="badge" data-component-variant="warning" role="status" class="inline-flex items-center gap-gutter-xs px-gutter-md py-gutter-xs rounded-full bg-status-pending-container text-on-status-pending-container border border-status-pending/20">
+          <span class="material-symbols-outlined text-[18px]" aria-hidden="true">schedule</span>
+          <span class="font-body text-label-lg" data-design-text-token="label-lg">Chờ xác nhận</span>
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-xl items-start">
+
+        <!-- Left Column: Full Request Info -->
+        <div class="lg:col-span-8 flex flex-col gap-gutter-lg">
+          <article class="bg-light-surface-container-lowest border border-light-outline-variant rounded-md p-gutter-lg flex flex-col gap-gutter-lg">
+            <h2 class="font-headline text-title-lg text-light-on-surface pb-gutter-sm border-b border-light-outline-variant/60" data-design-text-token="title-lg">Thông tin người đặt và người được khám</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg">
+              <div class="p-gutter-md rounded bg-light-surface-container-low border border-light-outline-variant/60 flex flex-col gap-gutter-xs">
+                <span class="font-body text-label-md text-light-primary" data-design-text-token="label-md">Người đặt / Người liên hệ</span>
+                <span class="font-body text-title-md text-light-on-surface" data-design-text-token="title-md">Nguyễn Văn An</span>
+                <span class="font-mono text-mono-md text-light-on-surface-variant tabular-nums" data-design-text-token="mono-md">0912 345 678</span>
+                <span class="font-body text-label-sm text-light-on-surface-variant" data-design-text-token="label-sm">Nhận cuộc gọi &amp; kết quả xác nhận</span>
+              </div>
+              <div class="p-gutter-md rounded bg-light-surface-container-low border border-light-outline-variant/60 flex flex-col gap-gutter-xs">
+                <span class="font-body text-label-md text-light-primary" data-design-text-token="label-md">Người được khám</span>
+                <span class="font-body text-title-md text-light-on-surface" data-design-text-token="title-md">Trần Thị Hoa</span>
+                <span class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">64 tuổi · Mẹ của người đặt</span>
+                <span class="font-body text-label-sm text-light-on-surface-variant" data-design-text-token="label-sm">Lý do: Khám tổng quát định kỳ, kiểm tra huyết áp</span>
+              </div>
+            </div>
+
+            <h2 class="font-headline text-title-lg text-light-on-surface pb-gutter-sm border-b border-light-outline-variant/60" data-design-text-token="title-lg">Lịch khám mong muốn</h2>
+            <dl class="grid grid-cols-1 md:grid-cols-2 gap-gutter-md">
+              <div class="flex flex-col gap-gutter-xs">
+                <dt class="font-body text-label-md text-light-on-surface-variant" data-design-text-token="label-md">Bác sĩ &amp; Phòng khám</dt>
+                <dd class="font-body text-title-md text-light-on-surface" data-design-text-token="title-md">BS. CKII Nguyễn Minh Hiếu</dd>
+                <dd class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">Nội tổng quát · Phòng 204</dd>
+              </div>
+              <div class="flex flex-col gap-gutter-xs">
+                <dt class="font-body text-label-md text-light-on-surface-variant" data-design-text-token="label-md">Khung giờ yêu cầu</dt>
+                <dd class="font-mono text-mono-md text-light-on-surface tabular-nums" data-design-text-token="mono-md">09:00 · Thứ 7, 21/11/2026</dd>
+                <dd class="font-body text-label-sm text-light-on-surface-variant" data-design-text-token="label-sm">Trạng thái lịch bác sĩ: Cần kiểm tra ca ưu tiên 09:00</dd>
+              </div>
+            </dl>
+          </article>
+
+          <!-- Timeline -->
+          <section class="bg-light-surface-container-lowest border border-light-outline-variant rounded-md p-gutter-lg flex flex-col gap-gutter-md">
+            <h2 class="font-headline text-title-lg text-light-on-surface" data-design-text-token="title-lg">Lịch sử xử lý</h2>
+            <div class="flex items-start gap-gutter-md">
+              <span class="w-2.5 h-2.5 rounded-full bg-status-pending mt-2 shrink-0"></span>
+              <div class="flex flex-col gap-gutter-xs">
+                <span class="font-body text-title-md text-light-on-surface" data-design-text-token="title-md">Người đặt gửi yêu cầu — Chờ xác nhận</span>
+                <span class="font-mono text-mono-md text-light-on-surface-variant tabular-nums" data-design-text-token="mono-md">20/11/2026 · 19:45 · Nguyễn Văn An</span>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Column: Staff Decision Panel -->
+        <aside class="lg:col-span-4 flex flex-col gap-gutter-md">
+          <article class="bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-gutter-lg flex flex-col gap-gutter-md">
+            <h2 class="font-headline text-title-lg text-light-on-surface" data-design-text-token="title-lg">Xử lý yêu cầu</h2>
+            <p class="font-body text-body-md text-light-on-surface-variant text-pretty" data-design-text-token="body-md">
+              Chọn một trong hai hành động bên dưới để cập nhật trạng thái cho yêu cầu <strong>YC-1046</strong>.
+            </p>
+
+            <!-- Action 1: Confirm -->
+            <a href="../staff-confirmed/KetQuaXacNhan.html" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="w-full inline-flex items-center justify-center gap-gutter-sm px-gutter-lg py-gutter-sm min-h-[44px] rounded bg-light-primary text-light-on-primary hover:bg-light-primary-container transition-colors duration-state-change">
+              <span class="material-symbols-outlined text-[18px]" aria-hidden="true">check_circle</span>
+              <span class="font-body text-label-lg" data-design-text-token="label-lg">Xác nhận lịch 09:00</span>
+            </a>
+
+            <!-- Action 2: Propose alternative time -->
+            <div class="pt-gutter-md border-t border-light-outline-variant/60 flex flex-col gap-gutter-sm">
+              <span class="font-body text-label-md text-light-on-surface" data-design-text-token="label-md">Hoặc đề nghị thời gian khác</span>
+              <label for="detail-new-time" class="font-body text-label-sm text-light-on-surface-variant" data-design-text-token="label-sm">Khung giờ đề xuất</label>
+              <select id="detail-new-time" class="rounded border border-light-outline-variant bg-light-surface-container-lowest px-gutter-md py-gutter-sm font-mono text-mono-md text-light-on-surface focus:border-light-primary focus:ring-1 focus:ring-light-primary">
+                <option value="10:30 · Thứ 7, 21/11/2026">10:30 · Thứ 7, 21/11/2026</option>
+                <option value="13:30 · Thứ 7, 21/11/2026">13:30 · Thứ 7, 21/11/2026</option>
+              </select>
+              <a href="../patient-reschedule/KetQuaDeNghiThoiGianKhac.html" data-component-id="button-secondary" data-component-type="button" data-component-variant="secondary" class="w-full inline-flex items-center justify-center gap-gutter-sm px-gutter-md py-gutter-sm min-h-[44px] rounded border border-light-outline-variant bg-light-surface-container-lowest text-light-on-surface hover:bg-light-surface-container-low transition-colors duration-state-change">
+                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">event_repeat</span>
+                <span class="font-body text-label-lg" data-design-text-token="label-lg">Gửi đề nghị thời gian khác</span>
+              </a>
+            </div>
+          </article>
+        </aside>
+
+      </div>
+    </main>
+
+    <!-- Shared Footer -->
+    <footer class="border-t border-light-outline-variant bg-light-surface-container-lowest">
+      <div class="max-w-[1280px] mx-auto px-gutter-lg py-gutter-md flex flex-wrap items-center justify-between gap-gutter-md">
+        <p class="font-body text-label-sm text-light-on-surface-variant" data-design-text-token="label-sm">
+          Phòng khám Đa khoa An Tâm · Dữ liệu mẫu phục vụ minh họa quy trình đặt &amp; tiếp nhận lịch hẹn (Agile/Scrum Demo)
+        </p>
+        <span class="font-mono text-label-sm text-light-outline tabular-nums" data-design-text-token="label-sm">Phiên bản Demo v1.0</span>
+      </div>
+    </footer>
+
+  </div>
+
+
+</body></html>
