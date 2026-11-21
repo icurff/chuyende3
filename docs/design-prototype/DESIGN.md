@@ -218,13 +218,13 @@ Thư mục `assets` giữ nguyên file nguồn xuất từ project. Đây là d�
 
 | Mã | Nguồn tương đối | Nội dung |
 |---|---|---|
-| DS0 | [Design System gốc](./assets/an_t_m_healthcare_portal_design_system.md) | Palette, typography, spacing và ý đồ thiết kế khai báo |
-| S01 | [Chọn bác sĩ và thời gian](./assets/ng_i_t_kh_m_ch_n_b_c_s_th_i_gian/code.html) | Card, ngày/giờ, form, tóm tắt, CTA |
-| S02 | [Kết quả gửi yêu cầu](./assets/ng_i_t_kh_m_k_t_qu_g_i_y_u_c_u_ch_x_c_nh_n/code.html) | Trạng thái chờ và chi tiết yêu cầu mẫu |
-| S03 | [Đề nghị thời gian khác](./assets/ng_i_t_kh_m_ngh_th_i_gian_kh_c/code.html) | Bối cảnh reschedule phía người đặt |
-| S04 | [Chi tiết yêu cầu nhân viên](./assets/nh_n_vi_n_ti_p_nh_n_chi_ti_t_y_u_c_u_yc_1046/code.html) | Thông tin và xử lý yêu cầu |
-| S05 | [Danh sách yêu cầu](./assets/nh_n_vi_n_ti_p_nh_n_danh_s_ch_y_u_c_u/code.html) | Bộ lọc, bảng, badge, thao tác dòng |
-| S06 | [Kết quả xác nhận](./assets/nh_n_vi_n_ti_p_nh_n_k_t_qu_x_c_nh_n_l_ch/code.html) | Trạng thái đã xác nhận |
+| DS0 | [Design System gốc](./assets/an-tâm-healthcare-portal-design-system.md) | Palette, typography, spacing và ý đồ thiết kế khai báo |
+| S01 | [Chọn bác sĩ và thời gian](./assets/người-đặt-khám-chọn-bác-sĩ-và-thời-gian/code.html) | Card, ngày/giờ, form, tóm tắt, CTA |
+| S02 | [Kết quả gửi yêu cầu](./assets/người-đặt-khám-kết-quả-gửi-yêu-cầu-chờ-xác-nhận/code.html) | Trạng thái chờ và chi tiết yêu cầu mẫu |
+| S03 | [Đề nghị thời gian khác](./assets/người-đặt-khám-đề-nghị-thời-gian-khác/code.html) | Bối cảnh reschedule phía người đặt |
+| S04 | [Chi tiết yêu cầu nhân viên](./assets/nhân-viên-tiếp-nhận-chi-tiết-yêu-cầu-yc-1046/code.html) | Thông tin và xử lý yêu cầu |
+| S05 | [Danh sách yêu cầu](./assets/nhân-viên-tiếp-nhận-danh-sách-yêu-cầu/code.html) | Bộ lọc, bảng, badge, thao tác dòng |
+| S06 | [Kết quả xác nhận](./assets/nhân-viên-tiếp-nhận-kết-quả-xác-nhận-lịch/code.html) | Trạng thái đã xác nhận |
 
 Đối chiếu tự động cho thấy đoạn cấu hình `globalThis.tailwind.config` của sáu HTML giống nhau. Điều này xác nhận tính nhất quán của cấu hình trong tập xuất, không chứng minh mọi component dùng đúng token hoặc mọi tương tác hoạt động.
 

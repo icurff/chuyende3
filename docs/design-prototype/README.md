@@ -8,19 +8,19 @@ Cập nhật hồ sơ: 21/11/2026. Project: [Cổng Đặt Lịch Khám Agile](h
 |---|---|
 | [DESIGN.md](./DESIGN.md) | Tổng hợp màu, typography, bố cục, spacing, component và trạng thái. Phần “ĐỀ XUẤT” chưa được áp dụng |
 | [DESIGN-SYSTEM-REVIEW.md](./DESIGN-SYSTEM-REVIEW.md) | Kết quả đối chiếu và phương án tránh tạo Design System trùng lặp |
-| [Design System nguồn](./assets/an_t_m_healthcare_portal_design_system.md) | Tài liệu nguyên bản xuất từ Stitch, giữ để đối chiếu |
+| [Design System nguồn](./assets/an-tâm-healthcare-portal-design-system.md) | Tài liệu nguyên bản xuất từ Stitch, giữ để đối chiếu |
 | [Phân công nhóm](../team/Phan-cong-nhom-Design-System-Prototype-Stitch.docx) | Phân công TV01–TV09, cách phối hợp và đầu ra; nhóm điền tên/hạn thực tế |
 
 ## Sáu màn hình trong snapshot
 
 | Mã | Màn hình / HTML nguồn |
 |---|---|
-| S01 | [Người đặt — Chọn bác sĩ và thời gian](./assets/ng_i_t_kh_m_ch_n_b_c_s_th_i_gian/code.html) |
-| S02 | [Người đặt — Kết quả gửi yêu cầu, chờ xác nhận](./assets/ng_i_t_kh_m_k_t_qu_g_i_y_u_c_u_ch_x_c_nh_n/code.html) |
-| S03 | [Người đặt — Đề nghị thời gian khác](./assets/ng_i_t_kh_m_ngh_th_i_gian_kh_c/code.html) |
-| S04 | [Nhân viên — Chi tiết yêu cầu](./assets/nh_n_vi_n_ti_p_nh_n_chi_ti_t_y_u_c_u_yc_1046/code.html) |
-| S05 | [Nhân viên — Danh sách yêu cầu](./assets/nh_n_vi_n_ti_p_nh_n_danh_s_ch_y_u_c_u/code.html) |
-| S06 | [Nhân viên — Kết quả xác nhận](./assets/nh_n_vi_n_ti_p_nh_n_k_t_qu_x_c_nh_n_l_ch/code.html) |
+| S01 | [Người đặt — Chọn bác sĩ và thời gian](./assets/người-đặt-khám-chọn-bác-sĩ-và-thời-gian/code.html) |
+| S02 | [Người đặt — Kết quả gửi yêu cầu, chờ xác nhận](./assets/người-đặt-khám-kết-quả-gửi-yêu-cầu-chờ-xác-nhận/code.html) |
+| S03 | [Người đặt — Đề nghị thời gian khác](./assets/người-đặt-khám-đề-nghị-thời-gian-khác/code.html) |
+| S04 | [Nhân viên — Chi tiết yêu cầu](./assets/nhân-viên-tiếp-nhận-chi-tiết-yêu-cầu-yc-1046/code.html) |
+| S05 | [Nhân viên — Danh sách yêu cầu](./assets/nhân-viên-tiếp-nhận-danh-sách-yêu-cầu/code.html) |
+| S06 | [Nhân viên — Kết quả xác nhận](./assets/nhân-viên-tiếp-nhận-kết-quả-xác-nhận-lịch/code.html) |
 
 Các file HTML là tài nguyên để đọc mã và đối chiếu, không được GitHub tự hiển thị như website. Bản export tham chiếu một số đường dẫn prototype logic khác tên thư mục thực tế; chưa sửa vì cần giữ nguyên snapshot nguồn. Không coi mở HTML local là đã kiểm thử toàn bộ luồng Stitch. Các font và Tailwind trong nguồn còn phụ thuộc tài nguyên mạng.
 
